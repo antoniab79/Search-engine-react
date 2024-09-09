@@ -1,0 +1,20 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App .SearchEngine {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App ul {
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.App li {
+  text-align: left;
+}
