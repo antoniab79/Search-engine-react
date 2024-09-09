@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Weather from "./Weather";
+import "./App.css";
 
 export default function SearchEngine() {
   const [city, setCity] = useState("");
@@ -26,7 +28,7 @@ export default function SearchEngine() {
   }
 
   return (
-    <div>
+    <div className="App">
       <form onSubmit={handleSubmit}>
         <input
           type="search"
@@ -36,14 +38,7 @@ export default function SearchEngine() {
         <input type="submit" value="Search" />
       </form>
 
-      {weatherData && (
-        <ul>
-          <li>Temperature: {Math.round(weatherData.temperature)}°C</li>
-          <li>Conditions: {weatherData.conditions}</li>
-          <li>Humidity: {weatherData.humidity}%</li>
-          <li>Wind Speed: {weatherData.wind} m/s</li>
-        </ul>
-      )}
+      {weatherData && <Weather data={weatherData} />}
     </div>
   );
 }
