@@ -15,7 +15,7 @@ export default function SearchEngine() {
 
     axios.get(url).then((response) => {
       setWeatherData({
-        temperature: response.data.main.temp,
+        temperature: Math.round(response.data.main.temp),
         conditions: response.data.weather[0].description,
         humidity: response.data.main.humidity,
         wind: response.data.wind.speed,
